@@ -1,22 +1,23 @@
-<h1>Timeline</h1>
-<ul reversed class="posts">
-  {{#each posts}}
-  <li>{{this.message}} {{dateFormat this.created_at}} Likes {{this.likes}}
-    <form id="like-button" action="/posts/like" method="post">
-      <input type="hidden" id="message" name="message" value="{{this.message}}">
-      <input type="hidden" id="likes" name="likes" value="{{this.likes}}">
-      <input type="submit" value="Like">
-    </form>
-    <form id="unlike-button" action="/posts/unlike" method="post">
-      <input type="hidden" id="message" name="message" value="{{this.message}}">
-      <input type="hidden" id="likes" name="likes" value="{{this.likes}}">
-      <input type="submit" value="Unlike">
-    </form>
-  </li>
+<div class = "text-box">
+  <form action="/posts/new">
+      <input type='submit' value="New Post" class="button1">
+  </form>
+  <h1>Timeline</h1>
+  <ul reversed class="posts">
+    <div class="post">{{#each posts}}
+      <li>{{this.message}} {{dateFormat this.created_at}} Likes {{this.likes}}
+        <form id="like-button" action="/posts/like" method="post">
+          <input type="hidden" id="message" name="message" value="{{this.message}}">
+          <input type="hidden" id="likes" name="likes" value="{{this.likes}}">
+          <input type="submit" value="Like">
+        </form>
+        <form id="unlike-button" action="/posts/unlike" method="post">
+          <input type="hidden" id="message" name="message" value="{{this.message}}">
+          <input type="hidden" id="likes" name="likes" value="{{this.likes}}">
+          <input type="submit" value="Unlike">
+        </form>
+      </li>
   {{/each}}
+    </div>
 </ul>
-
-<a class="new-post-link" href="/posts/new">New post</a>
-
-
-
+</div>

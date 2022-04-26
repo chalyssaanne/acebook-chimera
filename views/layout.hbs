@@ -1,4 +1,39 @@
-<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Welcome to Acebook</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section>
+      <nav>
+        <a id="appTitle" href="/">Acebook</a>
+        <div class ="nav-links">
+          <ul>
+            {{#if user}}
+              <li><a href="">Home</a></li> <!--- need to fill out these pages--->
+              <li><a href="">Friends</a></li>
+              <li><form action='/sessions?_method=DELETE' method='POST'>
+              <input type="submit" id="logOut" value="Log Out">
+              </form></li>
+            {{else}}
+             <li><a href="/users/new">Sign Up</a></li>
+              <li><a href="/sessions/new">Log In</a></li>
+            {{/if}}
+          </ul>
+        </div>
+      </nav>
+      </div>
+      </div>
+        <div id="backgroundimage"></div> 
+    </section>
+    {{{body}}}
+  </body>
+</html>
+<!--<!DOCTYPE html>
 <html>
   <head>
     <title>{{title}}</title>

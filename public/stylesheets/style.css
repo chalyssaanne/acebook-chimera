@@ -1,58 +1,112 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
 }
-
-body{
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a{
-  color: #00B7FF;
+#backgroundimage{
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(https://files.wallpaperpass.com/2019/10/vaporwave%20wallpaper%2004%20-%201920x1080.jpg);
+  background-position: center;
+  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 nav{
-  background: #ccc;
-  height: 2.5rem;
-  display: grid;
-  align-items: center;
-}
-
-.nav-center{
-  width: 95vw;
-  margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 2% 6%;
+  justify-content:space-between;
+  align-items: center; 
+  background-color: #333;
+  opacity: 0.8;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
 }
-
 .nav-links{
-  display: flex;
-  align-items: right;
+  flex: 1;
+  text-align: right;
 }
-
-ul{
+.nav-links ul{
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.nav-links li a{
-  border: 1px solid #000;
-  border-radius: 15px;
-  padding: 3px 12px;
-  margin: 3px;
+.nav-links ul li{
+  link-style: none;
+  display: inline-block;
+  padding: 9 px 12px;
+  position: relative;
 }
 
-#appTitle a{
-  color: #000;
+.nav-links ul li a {
+  color: #fff;
   text-decoration: none;
+  font-size: 20px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+}
+.nav-links ul li input{
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
 }
 
-form #logOut{
-  background: none;
-  border: 1px solid #000;
-  border-radius: 15px;
-  padding: 3px 12px;
-  margin: 3px;
-  cursor: pointer;
+li a:hover:not(.active) {
+  background-color: rgb(10, 8, 35);
 }
+li input:hover:not(.active) {
+  background-color: rgb(10, 8, 35);
+}
+.active {
+  background-color: #dd7a45;  font-size: 20px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+#appTitle {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.text-box{
+  width: 90%;
+  position: absolute;
+  top: 12em;
+  left: 50%;
+  transform: translate(-50%, -5em);
+  text-align: center;
+  background-color: #333;
+  opacity: 0.7;
+  color: #fff;
+  overflow: auto;
+}
+
+.button1:hover {
+  background-color: #e7e7e7;
+  border: 2px solid #e7e7e7;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.24),0 5px 6px 0 rgba(0,0,0,0.19);
+}
+
+.post {
+border: 3px solid #888;
+margin-bottom: 15px;
+border-radius: 15px;
+padding: 20px 5px; 
+}
+
