@@ -8,13 +8,14 @@ const FriendsController = {
         throw err;
       }
       
+      let friends_name = [];
+      
       User.findOne({email: req.session.user.email}, (err, user) => {
         if (err) {
           throw err;
         }
 
         const friends_list = user.friends;
-        let friends_name = [];
         
         for (let i = 0; i < friends_list.length ; i++) {
           User.findOne({email: friends_list[i] }, (err, friend) => {
@@ -25,11 +26,10 @@ const FriendsController = {
             let full_name = `${friend.first_name} ${friend.last_name}`;
 
             friends_name.push(full_name);
-
-            res.render("friends/index", { users: users.reverse(), friends_name: friends_name.reverse() });
-          });
+          })
         }
       }); 
+      res.render("friends/index", { users: users.reverse(), friends_name: friends_name.reverse() });
     });
   },
 

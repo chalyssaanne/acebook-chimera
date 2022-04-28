@@ -200,7 +200,7 @@ padding: 20px 5px;
   display: table-cell;
 }
 
-.newUserForm #first_name, .newUserForm #last_name, .newUserForm #email, .newUserForm #password{
+.newUserForm #first_name, .newUserForm #last_name, .newUserForm #email, .newUserForm #password, .newUserForm #img{
   display: table-cell;
 }
 

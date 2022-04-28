@@ -1,4 +1,5 @@
 const Post = require("../models/post");
+// const User = require("../models/user");
 
 const PostsController = {
   Index: (req, res) => {
@@ -6,10 +7,21 @@ const PostsController = {
       if (err) {
         throw err;
       }
+      
+      // let profile_pics = [];
+      
+      // for (let i = 0; i < posts.length; i++) {
+      //   User.findOne({_id: posts[i].author }, (err, user) => {
+      //     if (err) {
+      //       throw err;
+      //     }
 
-      res.render("posts/index", { posts: posts.reverse() });
+      //     profile_pics.push(user.profile_img);      
+        // });
+      res.render("posts/index", { posts: posts.reverse() }); 
     });
   },
+
   New: (req, res) => {
     res.render("posts/new", {});
   },
@@ -17,18 +29,19 @@ const PostsController = {
     const post = new Post({...req.body, 
       creator_first_name: req.session.user.first_name, 
       creator_last_name: req.session.user.last_name,
+      // author: req.session.user._id,
       creator_profile_img: req.session.user.profile_img,
-    img: {
-      contentType: req.file?.type,
-      data: req.file?.buffer
-    }});
-    post.save((err) => {
+      img: {
+        contentType: req.file?.type,
+        data: req.file?.buffer
+      }});
+      post.save((err) => {
     
-      if (err) {
-        throw err;
-      }
+        if (err) {
+          throw err;
+        }
 
-      res.status(201).redirect("/posts");
+        res.status(201).redirect("/posts");
     });
   },
   //this function increases the value of the likes in the database by one

@@ -6,9 +6,8 @@ const UserSchema = new mongoose.Schema({
   email: {type: String, required: true},
   password: {type: String, required: true},
   profile_img: {    
-    type: String,
-    default: 'default.png',
-    ref: "user"
+    data: Buffer,
+    contentType: String
   },
   friends: [{
     type: String, //friends will be an array of strings
