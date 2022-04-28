@@ -2,7 +2,7 @@
   <h1>Register with Acebook</h1>
   <br>
   <div class="newUserForm">
-    <form id="new-user-form" action="/users" method="post">
+    <form id="new-user-form" action="/users" method="post" enctype="multipart/form-data">
       <p>
         <label for="first_name">First Name </label>
         <input required id="first_name" type="string" name="first_name" value="">
@@ -20,8 +20,8 @@
         <input required id="password" type="password" name="password" value="">
       </p>
       <p>
-        <label for="img">Select profile image: </label>
-        <input type="file" name="profile_img" id="img" accept="image/*">
+        <label for="profile_img">Select profile image: </label>
+        <input type="file" name="profile_img" id="profile_img" accept="image/*">
       </p>
       <div class="submitButton">
         <input id="submit" type="submit" value="Submit">

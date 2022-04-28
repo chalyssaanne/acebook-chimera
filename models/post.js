@@ -5,7 +5,11 @@ const PostSchema = new mongoose.Schema({
   likes: { type: Number, default: 0},
   creator_first_name: { type: String, ref: 'user'},
   creator_last_name: { type: String, ref: 'user'},
-  // creator_profile_img: { type: String, ref: 'user'},
+  creator_profile_img: {
+    data: Buffer,
+    contentType: String
+  },
+
   img: {
     data: Buffer,
     contentType: String
