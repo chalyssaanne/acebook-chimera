@@ -120,10 +120,10 @@ li .loggedInNav input:hover:not(.active) {
 }
 
 .post {
-border: 3px solid #888;
-margin-bottom: 15px;
-border-radius: 15px;
-padding: 20px 5px; 
+  border: 3px solid #888;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  padding: 20px 5px; 
 }
 
 .formCon{
@@ -200,7 +200,7 @@ padding: 20px 5px;
   display: table-cell;
 }
 
-.newUserForm #first_name, .newUserForm #last_name, .newUserForm #email, .newUserForm #password, .newUserForm #img{
+.newUserForm #first_name, .newUserForm #last_name, .newUserForm #email, .newUserForm #password, .newUserForm #profile_img{
   display: table-cell;
 }
 
@@ -211,10 +211,16 @@ padding: 20px 5px;
   justify-content: center;
 }
 
-#chalyssaEggBox {
-  width: 100%;
-  height: 100vh;
-  background-image: url(https://tenor.com/view/pathway-blossom-anime-sakura-beautiful-gif-17604622);
-  background-size: cover;
-  background-position: center;
+.creator{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 5px;
+}
+
+.creator img{
+  height: 50px;
+  width: 50px;
+  margin: 0 10px;
+  border-radius: 35%;
 }

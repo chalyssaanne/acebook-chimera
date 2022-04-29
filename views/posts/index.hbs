@@ -8,13 +8,12 @@
     {{#each posts}}
     <div class="post">
       <li>
-        <div class="creator">
-          <img src="{{dataImage this.creator_profile_img}}" height="50"/>
-          <p>{{this.creator_first_name}} {{this.creator_last_name}}</p>
-        </div>
         <div class="dateCon">
           <small>{{dateFormat this.created_at}}</small>
-
+        </div>
+        <div class="creator">
+          <img src="{{dataImage this.creator_profile_img}}"/>
+          <p>{{this.creator_first_name}} {{this.creator_last_name}}</p>
         </div>
         {{#if this.img.data}}
           <div class="imageClass">
