@@ -2,35 +2,21 @@ const Friend = require("../models/friend");
 const User = require("../models/user");
 
 const FriendsController = {
-  New: (req, res) => {
-    User.find((err, users) => {
-      if (err) {
-        throw err;
-      }
-      
-      let friends_name = [];
-      
-      User.findOne({email: req.session.user.email}, (err, user) => {
-        if (err) {
-          throw err;
-        }
+  New: async (req, res) => {
+    const allUsers = await User.find();
+    let friendsName = [];
+    const loggedInUser = await User.findOne({email: req.session.user.email})
+    const friendsList = loggedInUser.friends;
+    
+    for (let i = 0; i < friendsList.length ; i++) {
+      const friend = await User.findOne({email: friendsList[i]})
 
-        const friends_list = user.friends;
-        
-        for (let i = 0; i < friends_list.length ; i++) {
-          User.findOne({email: friends_list[i] }, (err, friend) => {
-            if (err) {
-              throw err;
-            }
+      let fullName = `${friend.first_name} ${friend.last_name}`;
 
-            let full_name = `${friend.first_name} ${friend.last_name}`;
+      friendsName.push(fullName);
+    }
 
-            friends_name.push(full_name);
-          })
-        }
-      }); 
-      res.render("friends/index", { users: users.reverse(), friends_name: friends_name.reverse() });
-    });
+    res.render("friends/index", { users: allUsers.reverse(), friendsName: friendsName.reverse() });
   },
 
   Add: (req, res) => {
