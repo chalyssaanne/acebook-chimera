@@ -55,6 +55,7 @@ describe("User model", () => {
     last_name: "Smith",
     email: "someone@example.com",
     password: "password",
+    profile_img: "default.png"
   });
   expect(user.profile_img).toEqual("default.png")
   });

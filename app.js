@@ -15,6 +15,7 @@ const friendsRouter = require("./routes/friends");
 const rhysRouter = require("./routes/rhys")
 const saiyuktaRouter = require("./routes/saiyukta");
 const nagoreRouter = require("./routes/nagore");
+const bradleyRouter = require("./routes/bradley");
 
 require("./util/handlebarshelpers")
 
@@ -75,6 +76,7 @@ app.use("/friends", friendsRouter);
 app.use("/rhys", rhysRouter);
 app.use("/sigh", saiyuktaRouter);
 app.use("/nagore", nagoreRouter)
+app.use("/bradley", bradleyRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
